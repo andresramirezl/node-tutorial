@@ -19,9 +19,18 @@ const processRequest = (req, res) => {
       }
     case 'POST':
       switch (url) {
-        case '/pokemon/ditto':{ // const in a block
-          const body = ''
-          return res.end(body)
+        case '/pokemon':{ // const in a block
+          let body = ''
+          req.on('data', chunk => { //
+            body += chunk.toString()
+          })
+
+          req.on('end', () => {
+            const data = JSON.parse(body)
+            res.writeHead(201, { 'Content-Type': 'application/json; charset=utf-8' })
+            res.end(JSON.stringify(data))
+          })
+          break
         }
         default:
           res.statusCode = 404
