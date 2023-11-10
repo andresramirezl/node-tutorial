@@ -1,5 +1,5 @@
 const http = require('node:http')
-const dittoJSON = require('./pokemon/ditto.json')
+const dittoJSON = require('../pokemon/ditto.json')
 
 const port = process.env.PORT ?? 1234
 

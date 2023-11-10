@@ -1,0 +1,17 @@
+{
+  "name": "probando",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev1": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.18.2",
+    "servor": "^4.0.2",
+    "zod": "3.22.4"
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewport">
+        <title>PROBAR API REST</title>
+        <style>
+            article {
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+                padding: 10px;
+            }
+            img{
+                height: auto;
+                width: 320px;
+                max-width: 100%;
+            }
+        </style>
+        <script type="module">
+            document.addEventListener('DOMContentLoaded', async function () {
+                try {
+                    const response = await fetch('http://localhost:1234/movies');
+                    const movies = await response.json();
+                
+                    const html = movies.map(movie => 
+                        `
+                        <article data-id="${movie.id}">
+                            <h2>${movie.title}</h2>
+                            <img src="${movie.poster} alt="${movie.title}"
+                            <p>${movie.director}</p>
+                        </article>
+                        `
+                    ).join('');
+
+                    document.querySelector('main').innerHTML = html;
+                } catch (error) {
+                    console.error('Error fetching movies:', error);
+                }
+            });
+        </script>
+    
+    </head>
+    <body>  
+        <main></main>
+        
+    </body>
+</html>

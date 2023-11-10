@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const ditto = require('./pokemon/ditto.json')
+const ditto = require('../pokemon/ditto.json')
 const PORT = process.env.PORT ?? 1234
 
 app.disable('x-powered-by')

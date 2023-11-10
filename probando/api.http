@@ -1,0 +1,36 @@
+### get a ...
+GET http://localhost:1234/movies
+
+
+### get a ...
+GET http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+
+
+### create a ...
+GET http://localhost:1234/movies?genre=Action
+
+### create a ...
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+    "mocos": "mocos",
+    "title": "The Godfather",
+    "year": 1975,
+    "director": "Frank Darabont",
+    "duration": 175,
+    "poster": "https://i.ebayimg.com/images/g/yokAAOSw8w1YARbm/s-l1200.jpg",
+    "genre":[
+        "Crime",
+        "Drama"
+    ]
+}
+
+### Actualizar pelicula
+PATCH http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+    "year" :19
+
+}
